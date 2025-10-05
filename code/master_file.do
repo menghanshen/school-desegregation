@@ -15,7 +15,7 @@ capture log close _all
 ********************************************************************/
 
 // Adjust only this path to local project folder
-global PROJECT "/Users/liuhuan/school-desegregation"
+global PROJECT "YOUR PROJECT FOLDER"
  
 // Define subfolders
 global RAW            "$PROJECT/data/raw"
