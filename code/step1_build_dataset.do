@@ -5,9 +5,9 @@
 
 *----------------------------------------------------------------------*
 * Do-file Purpose: Build data for analysis                             *
-*   1: Clean school desegregation timeline information            *
-*   2: Append natality (birth certificate) data, 1970–2002        *
-*   3: Merge timeline dataset with natality dataset               *
+*   1: Clean school desegregation timeline information                 *
+*   2: Merge the state and county information with nchs code           * 
+*   3: Append natality (birth certificate) data, 1970–2002             *
 *----------------------------------------------------------------------*
 *version 16.0
 clear all
@@ -21,19 +21,14 @@ log using "$LOGS/step1_clean.log", text replace
 
 
 *======================================================================*
-*  1. Clean school desegregation information                       *
+*  1. Clean school desegregation information                           *
 *======================================================================*
 /***********************************************************************
 Tasks:
   1) Clean district-level desegregation timing
   2) Reduce to county-level (earliest year per county)
-  3) Merge with county FIPS crosswalk
- 
 data source:
-*time: downloaded data from Welch & Light (1987). New evidence on school desegregation.
-**nchs2fips_county from NBER crosswalk:
-https://www.nber.org/research/data/national-center-health-statistics-nchs-federal-information-processing-series-fips-state-county-and
- 
+*time: downloaded data from Welch & Light (1987). New evidence on school desegregation. 
 ***********************************************************************/
 
 
@@ -57,6 +52,19 @@ duplicates drop statename countyname, force
 * -- Pre-merge checks on names ----------------------------------------*
 tab statename
 tab countyname
+
+
+
+
+*======================================================================*
+*  2. Merge the state and county information with nchs code            *
+*======================================================================*
+/***********************************************************************
+data source:
+*time: downloaded data from Welch & Light (1987). New evidence on school desegregation.
+**nchs2fips_county from NBER crosswalk:
+https://www.nber.org/research/data/national-center-health-statistics-nchs-federal-information-processing-series-fips-state-county-and
+***********************************************************************/
 
 * -- Merge with county crosswalk (by names) ---------------------------*
 *Keep only matches present in both datasets (successful matches).
@@ -84,7 +92,7 @@ save "$PROC/time_ready_merge.dta", replace
 
 
 *======================================================================*
-*  2. Clean and Append natality (birth certificate) data, 1970–2002          *
+*  3. Clean and Append natality (birth certificate) data, 1970–2002          *
 *======================================================================*
 /***********************************************************************
 Tasks:
@@ -143,3 +151,4 @@ save "$ANALYSIS/black.dta", replace
 
 * log close 
 log close 
+
