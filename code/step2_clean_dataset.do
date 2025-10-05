@@ -142,8 +142,8 @@ local possible_outcomes ///
     mother_education mother_age teenage ///
     early_prenatal  ///
     preterm low_birthweight 
-
-local treatment_info treatment_years treatment treatment1 treatment2 treatment3 treatment_dummy 
+	
+local treatment_info treatment_years treatment treatment1 treatment2 treatment3 treatment_dummy diss_treatment_dummy
 
 
 	keep `basic_info'  `treatment_info' `possible_outcomes'

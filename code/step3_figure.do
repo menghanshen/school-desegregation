@@ -1,31 +1,22 @@
-
 *======================================================================*
 * Project: School Desegregation and Infant Health Outcomes             *
 *======================================================================*
 
 *----------------------------------------------------------------------*
 * Do-file Purpose: construct event-study figure                        *
-*   Step 1: Explore outcomes using scatterplots                        *
-*   Step 2: Examine outcomes using event-study figure                  *
+*   1) Explore outcomes using scatterplots                              *
+*   2) Examine outcomes using event-study figure                        *
 *----------------------------------------------------------------------*
+
 *version 16.0
 clear all
-macro drop all	
+macro drop all
 set more off
-capture log close _all        
+capture log close _all
 
 * ---- Open log ----
-log using "$LOGS/step3_figure.log", text replace  
-
+log using "$LOGS/step3_figure.log", text replace
 set more off
-
-*======================================================================*
-*                           Main Analysis                              *
-*   Baseline FE: county (cntyres) & cohort (birth_year);               *
-*   Standard errors clustered by county (cntyres).                     *
-*   Outcomes: marriage, father, mother, prenatal, infant outcomes      *
-*======================================================================*
-
 
 
 *=========================== Outcomes ==============================*
@@ -35,27 +26,28 @@ local possible_outcomes ///
     early_prenatal ///
     preterm low_birthweight
 
-	
+
 *================ Check descriptive figure ================*
 foreach y of local possible_outcomes {
 
-use "$ANALYSIS/ready_black_analysis.dta", clear
+    use "$ANALYSIS/ready_black_analysis.dta", clear
 
-collapse `y', by (treatment_years)	
-	
-twoway scatter `y' treatment_years, ///
-            title("Scatterplot `y'") ///
-            ytitle("Mean of `y'") ///
-            xtitle("Relative years to desegregation (t)") ///
-            name(descript_`y', replace)
+    collapse `y', by (treatment_years)
 
-        graph save   "descript_`y'.gph", replace
-        graph export "descript_`y'.pdf", as(pdf) replace
+    twoway scatter `y' treatment_years, ///
+        title("Scatterplot `y'") ///
+        ytitle("Mean of `y'") ///
+        xtitle("Relative years to desegregation (t)") ///
+        name(descript_`y', replace)
+
+    graph save "$RESULTS/descript_`y'.gph", replace
+    graph export "$RESULTS/descript_`y'.pdf", as(pdf) replace
 }
-	
+
+
 *================ Event-time dummies: t in [-6, +12], binned tails ================*
-* Uses treatment_years as the relative time (…,-2,-1,0,1,2,…)
-* Baseline: t = 0  (omit _post0)
+* Uses treatment_years as the relative time (…,-2,-1,0,1,2,…)                      *
+* Baseline: t = 0  (omit _post0)                                                   *
 
 use "$ANALYSIS/ready_black_analysis.dta", clear
 
@@ -77,8 +69,15 @@ forvalues i = 1/11 {
 * Lag tail: t >= +12
 gen byte _post12 = (treatment_years >= 12)
 
-*====================== 2) Loop over outcomes ========================*
 
+*======================================================================*
+*                           Main Analysis                              *
+*   Baseline FE: county (cntyres) & cohort (birth_year);               *
+*   Standard errors clustered by county (cntyres).                     *
+*   Outcomes: marriage, father, mother, prenatal, infant outcomes      *
+*======================================================================*
+
+*====================== 2) Loop over outcomes ========================*
 foreach y of local possible_outcomes {
 
     estimates clear
@@ -103,9 +102,10 @@ foreach y of local possible_outcomes {
             graphregion(fcolor(white)) ///
         )
 
-    graph save "event_`y'.gph", replace
-    graph export "event_`y'.pdf", as(pdf) replace
+    graph save "$RESULTS/event_`y'.gph", replace
+    graph export "$RESULTS/event_`y'.pdf", as(pdf) replace
 }
 
-* log close 
-log close 
+
+* log close
+log close

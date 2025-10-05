@@ -13,7 +13,7 @@ Project/
 ├── README.pdf
 ├── code/
 │   ├── master_file.do
-│   ├── all_pathnames.do
+│   ├── install_packages.do
 │   ├── step1_build_dataset.do
 │   ├── step2_clean_dataset.do
 │   ├── step3_figure.do
@@ -24,7 +24,7 @@ Project/
 
 ## Setup Instructions
 
-Before running the code, update the global paths in the `all_pathnames.do` file to match your computer’s directory structure.  
+Before running the code, update the global paths in the `master_file.do` to match your computer’s directory structure.  
 
 If you set up your folders as in the diagram above, you only need to update the global variable:
 
