@@ -24,7 +24,7 @@ global ANALYSIS       "$PROJECT/data/analysis"
 global LOGS           "$PROJECT/outputs/logs"
 global RESULTS        "$PROJECT/outputs/results"
 
-* results directory
+* dofile directory
 cd "$PROJECT/code"
 
 
