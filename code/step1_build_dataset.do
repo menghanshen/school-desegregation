@@ -101,6 +101,7 @@ browse nchs_county
 
 *get ready to be matched with 
 gen cntyres = nchs_state + nchs_county
+label cntyres "County of Residence"
 
 * -- Retain important outputs and order -------------------------------------*
 keep cntyres yearofdesegregation diss 
@@ -128,7 +129,7 @@ Tasks:
 
 
 /* -------------------- Clean dataset with Yearly loop ------------- */
-forvalues y = 1970/1977 {
+forvalues y = 1970/2002 {
 
     * Load natality file for year y
     use "$RAW/natality/natalityus`y'.dta", clear
@@ -139,14 +140,23 @@ forvalues y = 1970/1977 {
 
     * Merge with desegregation time data (county-level)
     merge m:1 cntyres using "$PROC/time_ready_merge.dta"
-
-    * Keep only counties that ever desegregated 
+	
     tab _merge 
-	keep if _merge==3 
-
+	/* There is only _merge==1 | _merge==3. No merge==2, meaning no county that was in the 
+	 desegregation file but not in the master file. All counties were successfully merged   */
+    
+	* Keep only counties that ever desegregated 
+	 keep if _merge==3 
+     
     * Year variables
     gen year = `y'
+	label var "Year"
+	
+	* Gen birth year of the mother 
     gen birth_year = year - dmage
+	label var "Cohort"
+	
+	* Gen treatment years 
     gen treatment_years = birth_year + 18 - yearofdesegregation
     label var treatment_years "Years to Desegregation"
 
@@ -157,7 +167,7 @@ forvalues y = 1970/1977 {
 
 /* -------------------- Append all years into one file -------- */
 use "$PROC/natl1970.dta", clear
-forvalues y = 1971/1977 {
+forvalues y = 1971/2002 {
     append using "$PROC/natl`y'.dta"
 }
 
