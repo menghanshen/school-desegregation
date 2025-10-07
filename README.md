@@ -44,11 +44,11 @@ code/master_file.do
 
 ## Data Sources
 
-| Dataset | Description | Use | Access |
+| Dataset | Description |Input Format | Output Format | Use | Access |
 |----------|--------------|-----|--------|
-| **School Desegregation Timeline** | Contains information on school district names, desegregation timing, county names, and state names. | Used to calculate the number of treatment years. | Downloaded data from [*Guryan.* (2004). *"Desegregation and Black Dropout Rates."* *American Economic Review*, 94(4), 919–943.](https://www.aeaweb.org/articles?id=10.1257/0002828042002679) |
-| **FIPS Crosswalk Files** | Provides geographic code outlines linking NCHS state, county, and MSA codes with the corresponding NCHS codes. | Used to connect state and county info from the school desegregation data to NCHS codes. | Downloaded from [NBER website](https://www.nber.org/research/data/national-center-health-statistics-nchs-federal-information-processing-series-fips-state-county-and). |
-| **Natality Dataset** | Provides demographic and health data for births occurring during the calendar year. | Provides outcome variables. | Downloaded from [NBER website](https://data.nber.org/nvss/natality/dta/). |
+| **School Desegregation Timeline** | Contains information on school district names, desegregation timing, county names, and state names. | School district level | County level | Used to calculate the number of treatment years. | Downloaded data from [*Guryan.* (2004). *"Desegregation and Black Dropout Rates."* *American Economic Review*, 94(4), 919–943.](https://www.aeaweb.org/articles?id=10.1257/0002828042002679) |
+| **FIPS Crosswalk Files** | Provides geographic code outlines linking NCHS state, county, and MSA codes with the corresponding NCHS codes. | County level | County level | Used to connect state and county info from the school desegregation data to NCHS codes. | Downloaded from [NBER website](https://www.nber.org/research/data/national-center-health-statistics-nchs-federal-information-processing-series-fips-state-county-and). |
+| **Natality Dataset** | Provides demographic and health data for births occurring during the calendar year. | Birth level | Birth level | Provides outcome variables. | Downloaded from [NBER website](https://data.nber.org/nvss/natality/dta/). |
 
 ---
 
