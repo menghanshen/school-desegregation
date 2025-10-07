@@ -43,17 +43,34 @@ drop if yearofdesegregation==0 | missing(yearofdesegregation)
 duplicates list statename countyname
 
 * -- Use the earliest district desegregation year for a unique county--*
+* Compute the true earliest year per county, it would be used to check whether I kept the earliest date 
+bys statename countyname: egen minyear = min(year)
+
 * sort so the earliest year is first within each county
 sort statename countyname yearofdesegregation
-
+	
 * drop duplicate counties, keeping the first (earliest) by current sort
 duplicates drop statename countyname, force
 
+* After the drop, each county should have exactly one row, and its year = minyear
+assert year == minyear
+
+* check if statename and countyname pairs are unique. 
+isid statename countyname
+
 * -- Pre-merge checks on names ----------------------------------------*
+* The statenames in nchs2fips_county are title cased 
 tab statename
 tab countyname
+* the readout looks correct to me. 
 
+* For precaution, clean spaces 
+replace statename = strtrim(stritrim(statename))
+replace countyname = strtrim(stritrim(countyname))
 
+* For precaution, title-case each word
+replace statename = ustrtitle(ustrlower(statename))
+replace countyname = ustrtitle(ustrlower(countyname))
 
 
 *======================================================================*
@@ -61,7 +78,6 @@ tab countyname
 *======================================================================*
 /***********************************************************************
 data source:
-*time: downloaded data from Welch & Light (1987). New evidence on school desegregation.
 **nchs2fips_county from NBER crosswalk:
 https://www.nber.org/research/data/national-center-health-statistics-nchs-federal-information-processing-series-fips-state-county-and
 ***********************************************************************/
@@ -70,6 +86,11 @@ https://www.nber.org/research/data/national-center-health-statistics-nchs-federa
 *Keep only matches present in both datasets (successful matches).
 merge 1:1 statename countyname using "$RAW/nchs2fips_county"
 tab _merge
+/*There was only _mege==2 and _merge==3, this means that there is 
+no data in the master file 
+that was not merged with a county/state pair in the fips_county file.  
+Hence, it is safe to keep _merge==3 
+*/
 keep if _merge==3
 
 * -- Construct county identifier --------------------------------------*
@@ -78,6 +99,7 @@ tab nchs_state
 browse nchs_county
 *They are all string variables and correctly patted with zeros 
 
+*get ready to be matched with 
 gen cntyres = nchs_state + nchs_county
 
 * -- Retain important outputs and order -------------------------------------*
