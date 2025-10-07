@@ -46,7 +46,7 @@ code/master_file.do
 
 | Dataset | Description | Use | Access |
 |----------|--------------|-----|--------|
-| **School Desegregation Timeline** | Contains information on school district names, desegregation timing, county names, and state names. | Used to calculate the number of treatment years. | Downloaded data from Welch & Light (1987), [New Evidence on School Desegregation](https://www.usccr.gov/files/historical/1987/87-005.pdf). |
+| **School Desegregation Timeline** | Contains information on school district names, desegregation timing, county names, and state names. | Used to calculate the number of treatment years. | Downloaded data from Guryan (2004), [Desegregation and Black Dropout Rates](https://www.aeaweb.org/articles?id=10.1257/0002828042002679). |
 | **FIPS Crosswalk Files** | Provides geographic code outlines linking NCHS state, county, and MSA codes with the corresponding NCHS codes. | Used to connect state and county info from the school desegregation data to NCHS codes. | Downloaded from [NBER website](https://www.nber.org/research/data/national-center-health-statistics-nchs-federal-information-processing-series-fips-state-county-and). |
 | **Natality Dataset** | Provides demographic and health data for births occurring during the calendar year. | Provides outcome variables. | Downloaded from [NBER website](https://data.nber.org/nvss/natality/dta/). |
 
