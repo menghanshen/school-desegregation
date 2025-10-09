@@ -1,6 +1,6 @@
 # School Desegregation and Birth Outcomes
 
-This README file contains instructions on how to replicate the results of the paper.
+This README file contains instructions on how to replicate the results of the project.
 
 ---
 
