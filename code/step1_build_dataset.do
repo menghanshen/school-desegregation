@@ -28,15 +28,15 @@ Tasks:
   1) Clean district-level desegregation timing
   2) Reduce to county-level (earliest year per county)
 data source:
-*time: downloaded data from Welch & Light (1987). New evidence on school desegregation. 
+*time: used data from Guryan. (2004). "Desegregation and Black Dropout Rates." 
+American Economic Review, 94(4), 919–943.
 ***********************************************************************/
 
 
 use "$RAW/time.dta", clear
 
-* -- Focus on ever-desegregated school districts ----------------------*
+* -- Check desegregation dates ----------------------*
 tab yearofdesegregation
-drop if yearofdesegregation==0 | missing(yearofdesegregation)
 
 * -- Check to see the number of duplicates at county level ------------*
 * Multiple districts per county are expected.
@@ -145,7 +145,7 @@ forvalues y = 1970/2002 {
 	/* There is only _merge==1 | _merge==3. No merge==2, meaning no county that was in the 
 	 desegregation file but not in the master file. All counties were successfully merged   */
     
-	* Keep only counties that ever desegregated 
+	* Keep only counties that have a desegregation date in the sample 
 	 keep if _merge==3 
      
     * Year variables
@@ -183,4 +183,5 @@ save "$ANALYSIS/black.dta", replace
 
 * log close 
 log close 
+
 
