@@ -74,14 +74,14 @@ The staggered rollout of court-ordered school desegregation provides a quasi-exp
 
 ## Key Findings
 
-- In Southern counties, school desegregation **improves infant health** among Black mothers.  
-- Desegregation increases:
-  - The probability of **biracial births**  
-  - **Maternal education** at birth  
-  - **Prenatal visits** in the first trimester  
-- Desegregation decreases:
-  - The probability that the **father is a teenager**  
-- Counties with higher initial Black enrollment experience **larger gains** among Black populations, suggesting that **increased per-pupil funding** plays a significant role in improving maternal education and infant health.
+- In Southern counties, school desegregation **improves infant health** as measured by preterm births among Black mothers.  
+  - Desegregation increases:
+    - **Maternal education** at birth  
+    - **Prenatal visits** in the first trimester  
+  - Desegregation decreases:
+    - The probability that the **father is a teenager**  
+  - Counties with higher initial Black enrollment experience **larger gains** among Black populations, suggesting that **increased per-pupil funding** plays a significant role in improving maternal education and infant health.
+- In non-Southern counties, school desegregation increased the probability of **biracial births**. 
 
 ## References
 
