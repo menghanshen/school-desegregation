@@ -29,7 +29,7 @@ Before running the code, update the global paths in the `master_file.do` to matc
 If you set up your folders as in the diagram above, you only need to update the global variable:
 
 ```
-$DISSERTATION
+$PROJECT
 ```
 
 to point to the location of your **project folder**.
