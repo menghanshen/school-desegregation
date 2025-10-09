@@ -85,8 +85,16 @@ The staggered rollout of court-ordered school desegregation provides a quasi-exp
 
 ## References
 
+## 📚 References
+
 - Shen, M. (2018). *The effects of school desegregation on infant health.* **Economics & Human Biology, 30**, 104–118.  
+  [https://www.sciencedirect.com/science/article/pii/S0272775717300973](https://www.sciencedirect.com/science/article/pii/S0272775717300973)
+
 - Shen, M. (2018). *How I met your mother: The effect of school desegregation on birth outcomes.* **Economics of Education Review, 63**, 31–50.  
+  [https://www.sciencedirect.com/science/article/pii/S1570677X18300248](https://www.sciencedirect.com/science/article/pii/S1570677X18300248)
+
+- Shen, M. (2016). *Three Essays on How Parents and Schools Affect Offspring’s Outcomes* (Doctoral dissertation, Columbia University).  
+  [https://academiccommons.columbia.edu/doi/10.7916/D8MS3SKT](https://academiccommons.columbia.edu/doi/10.7916/D8MS3SKT)
 
 ---
 
