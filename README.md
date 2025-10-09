@@ -51,9 +51,7 @@ code/master_file.do
 | **Natality Dataset** | Provides demographic and health data for births occurring during the calendar year. | Individual level | Individual level | Provides outcome variables. | Downloaded from [NBER website](https://data.nber.org/nvss/natality/dta/). |
 
 ---
-## Project Introduction 
-
-# School Desegregation and Birth Outcomes
+## Research Project: School Desegregation and Birth Outcomes
 
 ## Background 
 
