@@ -64,6 +64,7 @@ The multitude of negative consequences of preterm births makes the cause of the 
 ## Research Question 
 
 This project aims to examine whether **school desegregation affects the health of infants born to Black mothers**.  
+
 The staggered rollout of court-ordered school desegregation provides a quasi-experimental setting to identify the causal effects of school desegregation on intergenerational outcomes.
 
 ## Method
