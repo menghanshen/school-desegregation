@@ -124,13 +124,18 @@ recode treatment_dummy (.=0)
 
 
 * ========================= 6) Prepation for differential trend   ======================
-*gen destringed version of county to prepare 
+*gen destringed version of county and state to prepare 
 destring cntyres, gen (county_id_destring)
 destring stateres, gen (stateres_destring)
+
+*center mother's birth cohort; 1924 was chosen because it is the oldest mother in the dataset. 
 gen birth_year_center=birth_year-1924 
+
+*center mother's year of giving birth; 1970 is chosen because it is the earliest year of giving birth in the dataset 
 gen year_center=year-1970
 
 * ========================= 7) Prepation for hetergeneity analysis   ======================
+*generate an interaction term for treatment and dissimiliarity index 
 sum diss 
 gen diss_treatment_dummy=diss*treatment_dummy  
 
