@@ -54,49 +54,52 @@ code/master_file.do
 
 ## Summary
 
-School Desegregation and Birth Outcomes
+# School Desegregation and Birth Outcomes
 
-This project examines the relationship between school desegregation and birth outcomes. In the United States, a Black infant is twice as likely as a White infant to be born prematurely. Preterm birth is a major determinant of health complications in infants (Moster et al., 2008). It can present significant emotional and economic costs for families and societies (Butler et al., 2007). It is also correlated with lower educational attainment and lower earnings later in life (Behrman and Rosenzweig, 2002; Currie and Hyson, 1999; Moster et al., 2008).
+This project examines the relationship between **school desegregation** and **birth outcomes**.
+
+In the United States, a Black infant is twice as likely as a White infant to be born prematurely. Preterm birth is a major determinant of health complications in infants (Moster et al., 2008). It can present significant emotional and economic costs for families and societies (Butler et al., 2007). It is also correlated with lower educational attainment and lower earnings later in life (Behrman and Rosenzweig, 2002; Currie and Hyson, 1999; Moster et al., 2008).
 
 The multitude of negative consequences of preterm births makes the cause of the disparity in preterm birth rates between Black and White infants a pressing question for research and policy. Evidence suggests that segregation is one of the leading causes of inequality in health (Almond et al., 2006; Williams and Collins, 2001; Osypuk and Acevedo-Garcia, 2008).
 
-Objective
+---
 
-This project aims to examine whether school desegregation affects the health of infants born to Black mothers. The staggered rollout of court-ordered school desegregation provides a quasi-experimental setting to identify the causal effects of school desegregation on intergenerational outcomes.
+## Objective
 
-Methodology
-
-Data Source: Individual-level birth certificate data providing information on parental characteristics and infant health.
-
-Design: Exploits county and cohort variation, leveraging differences in implementation timing across counties and exposure to desegregated schools across cohorts.
-
-Key Findings
-
-In Southern counties, school desegregation improves infant health among Black mothers.
-
-Desegregation increases:
-
-The probability of biracial births
-
-Maternal education at birth
-
-Prenatal visits in the first trimester
-
-Desegregation decreases:
-
-The probability that the father is a teenager
-
-Counties with higher initial Black enrollment experience larger gains among Black populations, suggesting that increased per-pupil funding plays a significant role in improving maternal education and infant health.
-
-Stata codes: Stata scripts are provided for data preparation, cleaning, visualization, and regression analysis.
-
-References
-
-Shen, M. (2018). The effects of school desegregation on infant health. Economics & Human Biology, 30, 104–118.
-
-Shen, M. (2018). How I met your mother: The effect of school desegregation on birth outcomes. Economics of Education Review, 63, 31–50.
+This project aims to examine whether **school desegregation affects the health of infants born to Black mothers**.  
+The staggered rollout of court-ordered school desegregation provides a quasi-experimental setting to identify the causal effects of school desegregation on intergenerational outcomes.
 
 ---
+
+## Methodology
+
+- **Data Source:** Individual-level birth certificate data providing information on parental characteristics and infant health.  
+- **Design:** Exploits county and cohort variation, leveraging differences in implementation timing across counties and exposure to desegregated schools across cohorts.  
+- **Analytical Tools:** Stata scripts are provided for data preparation, cleaning, visualization, and regression analysis.  
+
+---
+
+## Key Findings
+
+- In Southern counties, school desegregation **improves infant health** among Black mothers.  
+- Desegregation increases:
+  - The probability of **biracial births**  
+  - **Maternal education** at birth  
+  - **Prenatal visits** in the first trimester  
+- Desegregation decreases:
+  - The probability that the **father is a teenager**  
+- Counties with higher initial Black enrollment experience **larger gains** among Black populations, suggesting that **increased per-pupil funding** plays a significant role in improving maternal education and infant health.
+
+---
+
+
+## References
+
+- Shen, M. (2018). *The effects of school desegregation on infant health.* **Economics & Human Biology, 30**, 104–118.  
+- Shen, M. (2018). *How I met your mother: The effect of school desegregation on birth outcomes.* **Economics of Education Review, 63**, 31–50.  
+
+---
+
 
 **Author:** *Menghan Shen*  
 **Contact:** *shenmenghan@gmail.com*  
