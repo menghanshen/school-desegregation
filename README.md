@@ -51,10 +51,11 @@ code/master_file.do
 | **Natality Dataset** | Provides demographic and health data for births occurring during the calendar year. | Individual level | Individual level | Provides outcome variables. | Downloaded from [NBER website](https://data.nber.org/nvss/natality/dta/). |
 
 ---
-
-## Summary
+## Project Introduction 
 
 # School Desegregation and Birth Outcomes
+
+## Background 
 
 This project examines the relationship between **school desegregation** and **birth outcomes**.
 
@@ -64,18 +65,17 @@ The multitude of negative consequences of preterm births makes the cause of the 
 
 ---
 
-## Objective
+## Research Question 
 
 This project aims to examine whether **school desegregation affects the health of infants born to Black mothers**.  
 The staggered rollout of court-ordered school desegregation provides a quasi-experimental setting to identify the causal effects of school desegregation on intergenerational outcomes.
 
 ---
 
-## Methodology
+## Method
 
 - **Data Source:** Individual-level birth certificate data providing information on parental characteristics and infant health.  
 - **Design:** Exploits county and cohort variation, leveraging differences in implementation timing across counties and exposure to desegregated schools across cohorts.  
-- **Analytical Tools:** Stata scripts are provided for data preparation, cleaning, visualization, and regression analysis.  
 
 ---
 
