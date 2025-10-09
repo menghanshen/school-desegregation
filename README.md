@@ -63,21 +63,15 @@ In the United States, a Black infant is twice as likely as a White infant to be 
 
 The multitude of negative consequences of preterm births makes the cause of the disparity in preterm birth rates between Black and White infants a pressing question for research and policy. Evidence suggests that segregation is one of the leading causes of inequality in health (Almond et al., 2006; Williams and Collins, 2001; Osypuk and Acevedo-Garcia, 2008).
 
----
-
 ## Research Question 
 
 This project aims to examine whether **school desegregation affects the health of infants born to Black mothers**.  
 The staggered rollout of court-ordered school desegregation provides a quasi-experimental setting to identify the causal effects of school desegregation on intergenerational outcomes.
 
----
-
 ## Method
 
 - **Data Source:** Individual-level birth certificate data providing information on parental characteristics and infant health.  
 - **Design:** Exploits county and cohort variation, leveraging differences in implementation timing across counties and exposure to desegregated schools across cohorts.  
-
----
 
 ## Key Findings
 
@@ -89,9 +83,6 @@ The staggered rollout of court-ordered school desegregation provides a quasi-exp
 - Desegregation decreases:
   - The probability that the **father is a teenager**  
 - Counties with higher initial Black enrollment experience **larger gains** among Black populations, suggesting that **increased per-pupil funding** plays a significant role in improving maternal education and infant health.
-
----
-
 
 ## References
 
